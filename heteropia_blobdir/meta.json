@@ -1,0 +1,553 @@
+{
+ "id": "heteropia_blobdir",
+ "assembly": {
+  "file": "/home/beagle/HD1/Heteropia_genome/ASSEMBLY_FAROL/assembly/heteropia_sp.target.fasta",
+  "scaffold-count": 62,
+  "span": 311830875
+ },
+ "fields": [
+  {
+   "id": "identifiers",
+   "type": "identifier"
+  },
+  {
+   "id": "gc",
+   "preload": true,
+   "scale": "scaleLinear",
+   "name": "GC",
+   "datatype": "float",
+   "range": [
+    0.3991,
+    0.5066
+   ],
+   "type": "variable"
+  },
+  {
+   "preload": true,
+   "scale": "scaleLog",
+   "id": "length",
+   "name": "Length",
+   "clamp": false,
+   "datatype": "integer",
+   "range": [
+    10473,
+    19841909
+   ],
+   "type": "variable"
+  },
+  {
+   "scale": "scaleLinear",
+   "id": "ncount",
+   "name": "N count",
+   "datatype": "integer",
+   "range": [
+    0,
+    0
+   ],
+   "type": "variable"
+  },
+  {
+   "datatype": "float",
+   "type": "variable",
+   "scale": "scaleLog",
+   "id": "coverage",
+   "name": "coverage",
+   "children": [
+    {
+     "id": "base_coverage",
+     "clamp": false,
+     "range": [
+      5.07,
+      267.0278
+     ],
+     "children": [
+      {
+       "id": "Heteropia.sorted_cov",
+       "file": "/home/beagle/HD1/Heteropia_genome/coverage/Heteropia.sorted.bam=Heteropia.sorted",
+       "type": "variable",
+       "parent": "base_coverage"
+      }
+     ],
+     "parent": "coverage"
+    }
+   ]
+  },
+  {
+   "datatype": "string",
+   "type": "category",
+   "id": "taxonomy",
+   "name": "Taxonomy",
+   "children": [
+    {
+     "id": "bestsumorder",
+     "children": [
+      {
+       "id": "bestsumorder_positions",
+       "name": "bestsumorder_positions",
+       "type": "multiarray",
+       "datatype": "mixed",
+       "preload": false,
+       "active": false,
+       "files": [
+        "/home/bruno_cajado/FAROL_genome/eggnog/diamond_evm_metazoa/diamond_evm_metazoa.fixed.hits"
+       ],
+       "headers": [
+        "taxid",
+        "start",
+        "end",
+        "score",
+        "subject",
+        "index",
+        "title"
+       ],
+       "parent": "bestsumorder"
+      },
+      {
+       "id": "bestsumorder_superkingdom",
+       "name": "bestsumorder_superkingdom",
+       "type": "category",
+       "data": [
+        {
+         "scale": "scaleLinear",
+         "id": "bestsumorder_superkingdom_cindex",
+         "name": "bestsumorder_superkingdom_cindex",
+         "datatype": "integer",
+         "range": [
+          0,
+          0
+         ],
+         "preload": false,
+         "active": false,
+         "type": "variable",
+         "parent": "bestsumorder_superkingdom"
+        },
+        {
+         "scale": "scaleLog",
+         "id": "bestsumorder_superkingdom_score",
+         "name": "bestsumorder_superkingdom_score",
+         "clamp": 1,
+         "datatype": "float",
+         "range": [
+          0,
+          0
+         ],
+         "preload": false,
+         "active": false,
+         "type": "variable",
+         "parent": "bestsumorder_superkingdom"
+        },
+        {
+         "id": "bestsumorder_superkingdom_positions",
+         "name": "bestsumorder_superkingdom_positions",
+         "type": "multiarray",
+         "datatype": "string",
+         "preload": false,
+         "active": false,
+         "linked_field": "bestsumorder_positions",
+         "category_slot": 0,
+         "headers": [
+          "name"
+         ],
+         "parent": "bestsumorder_superkingdom"
+        }
+       ],
+       "parent": "bestsumorder"
+      },
+      {
+       "id": "bestsumorder_kingdom",
+       "name": "bestsumorder_kingdom",
+       "type": "category",
+       "data": [
+        {
+         "scale": "scaleLinear",
+         "id": "bestsumorder_kingdom_cindex",
+         "name": "bestsumorder_kingdom_cindex",
+         "datatype": "integer",
+         "range": [
+          0,
+          0
+         ],
+         "preload": false,
+         "active": false,
+         "type": "variable",
+         "parent": "bestsumorder_kingdom"
+        },
+        {
+         "scale": "scaleLog",
+         "id": "bestsumorder_kingdom_score",
+         "name": "bestsumorder_kingdom_score",
+         "clamp": 1,
+         "datatype": "float",
+         "range": [
+          0,
+          36766.0
+         ],
+         "preload": false,
+         "active": false,
+         "type": "variable",
+         "parent": "bestsumorder_kingdom"
+        },
+        {
+         "id": "bestsumorder_kingdom_positions",
+         "name": "bestsumorder_kingdom_positions",
+         "type": "multiarray",
+         "datatype": "string",
+         "preload": false,
+         "active": false,
+         "linked_field": "bestsumorder_positions",
+         "category_slot": 0,
+         "headers": [
+          "name"
+         ],
+         "parent": "bestsumorder_kingdom"
+        }
+       ],
+       "parent": "bestsumorder"
+      },
+      {
+       "id": "bestsumorder_phylum",
+       "name": "bestsumorder_phylum",
+       "type": "category",
+       "data": [
+        {
+         "scale": "scaleLinear",
+         "id": "bestsumorder_phylum_cindex",
+         "name": "bestsumorder_phylum_cindex",
+         "datatype": "integer",
+         "range": [
+          0,
+          0
+         ],
+         "preload": false,
+         "active": false,
+         "type": "variable",
+         "parent": "bestsumorder_phylum"
+        },
+        {
+         "scale": "scaleLog",
+         "id": "bestsumorder_phylum_score",
+         "name": "bestsumorder_phylum_score",
+         "clamp": 1,
+         "datatype": "float",
+         "range": [
+          0,
+          32756.0
+         ],
+         "preload": false,
+         "active": false,
+         "type": "variable",
+         "parent": "bestsumorder_phylum"
+        },
+        {
+         "id": "bestsumorder_phylum_positions",
+         "name": "bestsumorder_phylum_positions",
+         "type": "multiarray",
+         "datatype": "string",
+         "preload": false,
+         "active": false,
+         "linked_field": "bestsumorder_positions",
+         "category_slot": 0,
+         "headers": [
+          "name"
+         ],
+         "parent": "bestsumorder_phylum"
+        }
+       ],
+       "parent": "bestsumorder"
+      },
+      {
+       "id": "bestsumorder_class",
+       "name": "bestsumorder_class",
+       "type": "category",
+       "data": [
+        {
+         "scale": "scaleLinear",
+         "id": "bestsumorder_class_cindex",
+         "name": "bestsumorder_class_cindex",
+         "datatype": "integer",
+         "range": [
+          0,
+          0
+         ],
+         "preload": false,
+         "active": false,
+         "type": "variable",
+         "parent": "bestsumorder_class"
+        },
+        {
+         "scale": "scaleLog",
+         "id": "bestsumorder_class_score",
+         "name": "bestsumorder_class_score",
+         "clamp": 1,
+         "datatype": "float",
+         "range": [
+          0,
+          19420.0
+         ],
+         "preload": false,
+         "active": false,
+         "type": "variable",
+         "parent": "bestsumorder_class"
+        },
+        {
+         "id": "bestsumorder_class_positions",
+         "name": "bestsumorder_class_positions",
+         "type": "multiarray",
+         "datatype": "string",
+         "preload": false,
+         "active": false,
+         "linked_field": "bestsumorder_positions",
+         "category_slot": 0,
+         "headers": [
+          "name"
+         ],
+         "parent": "bestsumorder_class"
+        }
+       ],
+       "parent": "bestsumorder"
+      },
+      {
+       "id": "bestsumorder_order",
+       "name": "bestsumorder_order",
+       "type": "category",
+       "data": [
+        {
+         "scale": "scaleLinear",
+         "id": "bestsumorder_order_cindex",
+         "name": "bestsumorder_order_cindex",
+         "datatype": "integer",
+         "range": [
+          0,
+          0
+         ],
+         "preload": false,
+         "active": false,
+         "type": "variable",
+         "parent": "bestsumorder_order"
+        },
+        {
+         "scale": "scaleLog",
+         "id": "bestsumorder_order_score",
+         "name": "bestsumorder_order_score",
+         "clamp": 1,
+         "datatype": "float",
+         "range": [
+          0,
+          9711.0
+         ],
+         "preload": false,
+         "active": false,
+         "type": "variable",
+         "parent": "bestsumorder_order"
+        },
+        {
+         "id": "bestsumorder_order_positions",
+         "name": "bestsumorder_order_positions",
+         "type": "multiarray",
+         "datatype": "string",
+         "preload": false,
+         "active": false,
+         "linked_field": "bestsumorder_positions",
+         "category_slot": 0,
+         "headers": [
+          "name"
+         ],
+         "parent": "bestsumorder_order"
+        }
+       ],
+       "parent": "bestsumorder"
+      },
+      {
+       "id": "bestsumorder_family",
+       "name": "bestsumorder_family",
+       "type": "category",
+       "data": [
+        {
+         "scale": "scaleLinear",
+         "id": "bestsumorder_family_cindex",
+         "name": "bestsumorder_family_cindex",
+         "datatype": "integer",
+         "range": [
+          0,
+          0
+         ],
+         "preload": false,
+         "active": false,
+         "type": "variable",
+         "parent": "bestsumorder_family"
+        },
+        {
+         "scale": "scaleLog",
+         "id": "bestsumorder_family_score",
+         "name": "bestsumorder_family_score",
+         "clamp": 1,
+         "datatype": "float",
+         "range": [
+          0,
+          9711.0
+         ],
+         "preload": false,
+         "active": false,
+         "type": "variable",
+         "parent": "bestsumorder_family"
+        },
+        {
+         "id": "bestsumorder_family_positions",
+         "name": "bestsumorder_family_positions",
+         "type": "multiarray",
+         "datatype": "string",
+         "preload": false,
+         "active": false,
+         "linked_field": "bestsumorder_positions",
+         "category_slot": 0,
+         "headers": [
+          "name"
+         ],
+         "parent": "bestsumorder_family"
+        }
+       ],
+       "parent": "bestsumorder"
+      },
+      {
+       "id": "bestsumorder_genus",
+       "name": "bestsumorder_genus",
+       "type": "category",
+       "data": [
+        {
+         "scale": "scaleLinear",
+         "id": "bestsumorder_genus_cindex",
+         "name": "bestsumorder_genus_cindex",
+         "datatype": "integer",
+         "range": [
+          0,
+          0
+         ],
+         "preload": false,
+         "active": false,
+         "type": "variable",
+         "parent": "bestsumorder_genus"
+        },
+        {
+         "scale": "scaleLog",
+         "id": "bestsumorder_genus_score",
+         "name": "bestsumorder_genus_score",
+         "clamp": 1,
+         "datatype": "float",
+         "range": [
+          0,
+          9711.0
+         ],
+         "preload": false,
+         "active": false,
+         "type": "variable",
+         "parent": "bestsumorder_genus"
+        },
+        {
+         "id": "bestsumorder_genus_positions",
+         "name": "bestsumorder_genus_positions",
+         "type": "multiarray",
+         "datatype": "string",
+         "preload": false,
+         "active": false,
+         "linked_field": "bestsumorder_positions",
+         "category_slot": 0,
+         "headers": [
+          "name"
+         ],
+         "parent": "bestsumorder_genus"
+        }
+       ],
+       "parent": "bestsumorder"
+      },
+      {
+       "id": "bestsumorder_species",
+       "name": "bestsumorder_species",
+       "type": "category",
+       "data": [
+        {
+         "scale": "scaleLinear",
+         "id": "bestsumorder_species_cindex",
+         "name": "bestsumorder_species_cindex",
+         "datatype": "integer",
+         "range": [
+          0,
+          0
+         ],
+         "preload": false,
+         "active": false,
+         "type": "variable",
+         "parent": "bestsumorder_species"
+        },
+        {
+         "scale": "scaleLog",
+         "id": "bestsumorder_species_score",
+         "name": "bestsumorder_species_score",
+         "clamp": 1,
+         "datatype": "float",
+         "range": [
+          0,
+          7760.0
+         ],
+         "preload": false,
+         "active": false,
+         "type": "variable",
+         "parent": "bestsumorder_species"
+        },
+        {
+         "id": "bestsumorder_species_positions",
+         "name": "bestsumorder_species_positions",
+         "type": "multiarray",
+         "datatype": "string",
+         "preload": false,
+         "active": false,
+         "linked_field": "bestsumorder_positions",
+         "category_slot": 0,
+         "headers": [
+          "name"
+         ],
+         "parent": "bestsumorder_species"
+        }
+       ],
+       "parent": "bestsumorder"
+      }
+     ],
+     "parent": "taxonomy"
+    }
+   ]
+  },
+  {
+   "datatype": "mixed",
+   "type": "array",
+   "id": "busco",
+   "name": "Busco",
+   "children": [
+    {
+     "version": "6.0.0",
+     "set": "metazoa_odb12",
+     "count": 672,
+     "file": "/home/beagle/HD1/Heteropia_genome/ASSEMBLY_FAROL/busco_assembly/heteropia_sp_busco/run_metazoa_odb12/full_table.tsv",
+     "id": "metazoa_odb12_busco",
+     "type": "multiarray",
+     "category_slot": 1,
+     "headers": [
+      "Busco id",
+      "Status"
+     ]
+    }
+   ]
+  }
+ ],
+ "links": {},
+ "name": "heteropia_blobdir",
+ "plot": {
+  "x": "gc",
+  "z": "length",
+  "y": "Heteropia.sorted_cov",
+  "cat": "bestsumorder_phylum"
+ },
+ "record_type": "record",
+ "records": 62,
+ "taxon": {},
+ "version": 1,
+ "revision": 0
+}
